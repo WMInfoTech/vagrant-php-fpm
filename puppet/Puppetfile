@@ -1,0 +1,7 @@
+forge "http://forge.puppetlabs.com"
+
+mod "puppetlabs/stdlib"
+mod "puppetlabs/mysql"
+mod "puppetlabs/apt"
+mod "php_web",
+  :git => "git://github.com/pcfens/puppet-php_web.git"
