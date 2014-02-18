@@ -1,12 +1,10 @@
 class { 'apt': }
 
 class { 'php_web':
-  webserver             => 'nginx',
+#  webserver             => 'nginx',
+  vhost_root            => '/var/www',
   admin_email           => 'unix@wm.edu',
-  apache_cas            => true,
   php_cas               => true,
-  cas_login_url         => 'https://castst.wm.edu/cas/login',
-  cas_validate_url      => 'https://castst.wm.edu/cas/serviceValidate',
   php_session_store     => 'memcache',
   php_session_save_path => 'tcp://localhost:11211?persistent=1&weight=2&timeout=2&retry_interval=10',
   require               => [ Package['memcached'], Class['mysql::server'] ]
