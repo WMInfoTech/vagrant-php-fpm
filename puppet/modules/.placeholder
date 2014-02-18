@@ -1,0 +1,4 @@
+A file so that git keeps the modules directory around.
+
+It has to be here when vagrant starts up so that it can
+be shared like vagrant expects.
