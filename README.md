@@ -9,7 +9,8 @@ PHP-FPM with fastcgi instead of mod_php.  The default box uses [VirtualBox](http
 To start the machine, navigate in a terminal to the root of this repository and run `vagrant up`.
 
 After a few minutes you'll have development server that very closely resembles
-the server your site will run on in production.
+the server your site will run on in production.  Unless there's a port collision,
+the webserver's default port of 80 will be accessible at [http://localhost:8080](http://localhost:8080).
 
 The folder `webroot/` is the equivalent to the folder you'll have access to when
 uploading content to the production web server.  Files that don't need to directly
