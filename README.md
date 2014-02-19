@@ -20,6 +20,14 @@ The VM also includes a MySQL/MariaDB server for database development.  The datab
 can be connected to using the same name that will be used in production of `webdb.wm.edu`.
 There is no root password for the database server.
 
+### Apache <-> nginx
+
+You can use nginx instead of apache by uncommenting the webserver parameter in
+`puppet/manifests/site.pp` that reads `webserver => 'nginx'`.  The change will
+only take effect when destroying the machine (see below) and re-running `vagrant up`.
+(`vagrant provision` might do it, but may cause side-effects since apache won't
+be removed.)
+
 ## Caveats
 
 Database storage is ephemeral and will be lost when you run `vagrant destroy`.  To save
