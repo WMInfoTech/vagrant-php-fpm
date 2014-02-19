@@ -11,6 +11,7 @@ class { 'php_web':
 }
 
 php_web::vhost { 'vagrant.localhost':
+#  wordpress    => true,
   manage_user  => false,
   alt_root     => true,
   show_errors  => true,

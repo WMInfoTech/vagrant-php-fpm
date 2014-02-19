@@ -21,6 +21,15 @@ The VM also includes a MySQL/MariaDB server for database development.  The datab
 can be connected to using the same name that will be used in production of `webdb.wm.edu`.
 There is no root password for the database server.
 
+### Wordpress
+
+If you're trying to run a wordpress site in the machine, and don't want to edit the
+apache configuration by hand (and don't like .htaccess files), uncomment the line
+`wordpress => true` in `puppet/manifests/site.pp` in the `php_web::vhost` section.
+
+If you already have a running VM when you do this, run the `vagrant provision` command
+to update the machine.
+
 ### Apache <-> nginx
 
 You can use nginx instead of apache by uncommenting the webserver parameter in
