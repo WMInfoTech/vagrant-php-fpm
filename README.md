@@ -1,8 +1,8 @@
 vagrant-phpweb
 ==============
 
-A (vagrant)[http://www.vagrantup.com] machine designed to create a basic LAMP stack, but using
-PHP-FPM with fastcgi instead of mod_php.  The default box uses (VirtualBox)[https://www.virtualbox.org/].
+A [vagrant](http://www.vagrantup.com) machine designed to create a basic LAMP stack, but using
+PHP-FPM with fastcgi instead of mod_php.  The default box uses [VirtualBox](https://www.virtualbox.org/).
 
 ## Use
 
