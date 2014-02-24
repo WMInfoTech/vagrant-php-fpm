@@ -3,6 +3,8 @@
 
 VAGRANTFILE_API_VERSION = "2"
 
+Vagrant.require_version ">= 1.4.0"
+
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64-wmit"
   config.vm.box_url = "http://mirror.swem.wm.edu/vagrant/precise64-wmit.box"
@@ -11,9 +13,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder 'webroot', '/var/www/vagrant.localhost', :owner => 'www-data'
 
   $install_puppet_modules = <<SCRIPT
-gem install librarian-puppet --no-rdoc --no-ri
+sudo gem install librarian-puppet --no-rdoc --no-ri
 cd /vagrant/puppet
-librarian-puppet install
+/usr/local/bin/librarian-puppet install
 SCRIPT
 
   config.vm.provision "shell", inline: $install_puppet_modules
