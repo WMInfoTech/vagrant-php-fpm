@@ -3,11 +3,10 @@
 
 VAGRANTFILE_API_VERSION = "2"
 
-Vagrant.require_version ">= 1.4.0"
+Vagrant.require_version ">= 1.5.0"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "precise64-wmit"
-  config.vm.box_url = "http://mirror.swem.wm.edu/vagrant/precise64-wmit.box"
+  config.vm.box = "wmit/precise64"
 
   config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
   config.vm.synced_folder 'webroot', '/var/www/vagrant.localhost', :owner => 'www-data'
