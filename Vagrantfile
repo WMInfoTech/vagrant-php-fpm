@@ -12,6 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder 'webroot', '/var/www/vagrant.localhost', :owner => 'www-data'
 
   $install_puppet_modules = <<SCRIPT
+sudo aptitude install ruby1.9.1-dev -y
 sudo gem install librarian-puppet --no-rdoc --no-ri
 cd /vagrant/puppet
 /usr/local/bin/librarian-puppet install
