@@ -1,0 +1,10 @@
+.vagrant
+.tmp
+Puppetfile.lock
+.librarian
+puppet/modules/apt
+puppet/modules/firewall
+puppet/modules/mysql
+puppet/modules/stdlib
+puppet/modules/php_web
+*.swp
