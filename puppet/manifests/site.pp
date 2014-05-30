@@ -5,7 +5,7 @@ class { 'php_web':
 }
 
 php_web::vhost { 'vagrant.localhost':
-  apache_def => { 'fallbackresource' => '/index.php' },
+#  apache_def => { 'fallbackresource' => '/index.php' },
 }
 
 host { 'webdb.wm.edu':
