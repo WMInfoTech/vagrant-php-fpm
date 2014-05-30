@@ -105,7 +105,7 @@ define php_web::vhost (
 
     # Until the future (4.x) parser is widely supported we need to do this 
     # array to hash hack so that the hash keys can be defined by variables
-    $apache_vhost_data = deep_merge($vhost, $upper_vhost)
+    $apache_vhost_data = deep_merge($apache_def, $upper_vhost)
     $apache_vhost = hash([ $domain, $apache_vhost_data ])
 
     # Create the vhost resource

@@ -1,10 +1,12 @@
 class { 'apt': }
 
 class { 'php_web':
-  serveradmin => 'pcfens@wm.edu',
+  serveradmin => 'unix@wm.edu',
 }
 
-php_web::vhost { 'vagrant.localhost': }
+php_web::vhost { 'vagrant.localhost':
+  apache_def => { 'fallbackresource' => '/index.php' },
+}
 
 host { 'webdb.wm.edu':
   ip => '127.0.0.1',
