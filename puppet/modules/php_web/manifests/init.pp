@@ -9,14 +9,7 @@ class php_web (
 
   validate_string($serveradmin, $service_ensure, $webserver)
 
-  class { 'php::fpm::daemon':
-    ensure    => present,
-    log_level => 'warn',
-  }
-
-  php::fpm::conf { 'www':
-    ensure => absent,
-  }
+  class { '::php_web::php': }
 
   if $webserver == 'apache' {
     class { '::php_web::apache':
