@@ -16,8 +16,6 @@ define php_web::vhost (
 
   $webserver = getparam(Class['php_web'], 'webserver')
   $vhost_root = getparam(Class['php_web'], 'vhost_root')
-  $php_session_handler = getparam(Class['php_web'], 'session_handler')
-  $php_session_path = getparam(Class['php_web'], 'session_path')
 
   if !$uid or !$gid { # If the user is being managed we need to know UID/GID
     fail('UID/GID is required')
@@ -130,17 +128,11 @@ define php_web::vhost (
       'error_log'       => "${webroot_base}/php.error.log",
       'php_admin_value' =>
         {
-          'disable_functions'   => 'phpinfo,eval,exec,shell_exec',
           'date.timezone'       => 'America/New_York',
           'upload_max_filesize' => $upload_limit,
           'post_max_size'       => $upload_limit,
           'display_errors'      => $php_display_errors,
         },
-      'php_value'       =>
-        {
-          'session.save_handler' => $php_session_handler,
-          'session.save_path'    => "\"${php_session_path}\"",
-        }
     }])
 
   create_resources('php::fpm::conf', $php_fpm)

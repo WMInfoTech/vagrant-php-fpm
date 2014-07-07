@@ -8,6 +8,7 @@ class php_web (
 ) inherits ::php_web::params {
 
   validate_string($serveradmin, $service_ensure, $webserver)
+  validate_string($php_session_handler, $php_session_path)
 
   class { '::php_web::php': }
 
