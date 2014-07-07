@@ -4,10 +4,6 @@ class { 'php_web':
   serveradmin => 'unix@wm.edu',
 }
 
-package { 'unzip':
-  ensure => present,
-}
-
 php_web::vhost { 'vagrant.localhost':
 #  apache_def => { 'fallbackresource' => '/index.php' },
 }
