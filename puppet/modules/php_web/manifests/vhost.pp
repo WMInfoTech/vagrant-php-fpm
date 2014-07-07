@@ -124,6 +124,9 @@ define php_web::vhost (
       'user'            => $user,
       'group'           => $group,
       'listen'          => "/var/run/${domain}.sock",
+      'listen_owner'    => 'nobody',
+      'listen_group'    => 'nogroup',
+      'listen_mode'     => '0666',
       'error_log'       => "${webroot_base}/php.error.log",
       'php_admin_value' =>
         {
