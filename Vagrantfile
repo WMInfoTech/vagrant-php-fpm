@@ -26,9 +26,6 @@ SCRIPT
     puppet.manifests_path = "puppet/manifests"
     puppet.module_path = "puppet/modules"
     puppet.manifest_file  = "site.pp"
-    puppet.facter = {
-      "vagrant" => "1"
-    }
     puppet.options = [
       "--pluginsync"
     ]

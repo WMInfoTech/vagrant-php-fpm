@@ -9,4 +9,5 @@ puppet/modules/firewall
 puppet/modules/mysql
 puppet/modules/php
 puppet/modules/stdlib
+puppet/modules/php_web
 *.swp
