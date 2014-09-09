@@ -16,7 +16,11 @@ class { 'php_web':
   }
 }
 
-php_web::vhost { 'vagrant.localhost': }
+php_web::vhost { 'vagrant.localhost':
+ # apache_def => {
+ #   fallbackresource => '/index.php',
+ # }
+}
 
 host { 'mdbc1.wm.edu':
   ip => '127.0.0.1',
