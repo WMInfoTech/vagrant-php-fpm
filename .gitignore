@@ -2,9 +2,12 @@
 .tmp
 Puppetfile.lock
 .librarian
+puppet/modules/apache
 puppet/modules/apt
+puppet/modules/concat
 puppet/modules/firewall
 puppet/modules/mysql
+puppet/modules/php
 puppet/modules/stdlib
 puppet/modules/php_web
 *.swp
